@@ -1,0 +1,277 @@
+
+/* =====================================
+   LEADERBOARD PAGE
+===================================== */
+
+.leaderboard-page {
+  min-height: 75vh;
+  padding-top: 90px;
+  padding-bottom: 100px;
+}
+
+/* PAGE HEADING */
+
+.leaderboard-page > .eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  color: #a78bfa;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.leaderboard-page h1 {
+  margin: 18px 0 10px;
+
+  color: #f5f5f5;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(38px, 6vw, 64px);
+  font-weight: 700;
+  letter-spacing: -3px;
+}
+
+.leaderboard-page h1 .purple {
+  color: #a78bfa;
+}
+
+.leaderboard-page > .muted {
+  color: #929292;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* STATISTICS */
+
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin: 45px 0 55px;
+}
+
+.stat-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+
+  min-height: 175px;
+  padding: 25px;
+
+  background: #111111;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+
+  transition: border-color 0.25s ease,
+              transform 0.25s ease;
+}
+
+.stat-card:hover {
+  border-color: rgba(167, 139, 250, 0.5);
+  transform: translateY(-4px);
+}
+
+.stat-card svg {
+  width: 21px;
+  height: 21px;
+  color: #a78bfa;
+  stroke-width: 1.7;
+}
+
+.stat-card strong {
+  color: #ffffff;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 35px;
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+
+.stat-card span {
+  color: #929292;
+  font-size: 12px;
+  letter-spacing: 0.3px;
+}
+
+/* SCORE TABLE */
+
+.score-table {
+  overflow: hidden;
+
+  background: #101010;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+}
+
+.score-table h3 {
+  padding: 23px 25px;
+
+  color: #f5f5f5;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* SCORE ROW */
+
+.score-row {
+  display: grid;
+  grid-template-columns: 65px minmax(0, 1fr) 130px 100px;
+  align-items: center;
+  gap: 15px;
+
+  padding: 20px 25px;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  transition: background 0.2s ease;
+}
+
+.score-row:last-child {
+  border-bottom: none;
+}
+
+.score-row:hover {
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.score-row .rank {
+  color: #a78bfa;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.score-row strong {
+  overflow: hidden;
+  color: #eeeeee;
+  font-size: 13px;
+  font-weight: 600;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.score-row > span:not(.rank) {
+  color: #888888;
+  font-size: 12px;
+}
+
+.score-row b {
+  color: #c4b5fd;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  text-align: right;
+}
+
+/* EMPTY STATE */
+
+.score-table .empty {
+  margin: 0;
+  padding: 45px 20px;
+
+  color: #929292;
+  background: transparent;
+  border: none;
+
+  font-size: 13px;
+  line-height: 1.8;
+  text-align: center;
+}
+
+/* TABLET */
+
+@media (max-width: 800px) {
+  .leaderboard-page {
+    padding-top: 70px;
+  }
+
+  .stats-row {
+    gap: 12px;
+  }
+
+  .stat-card {
+    padding: 20px;
+  }
+
+  .score-row {
+    grid-template-columns: 45px minmax(0, 1fr) 100px 85px;
+    gap: 10px;
+    padding: 18px;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 550px) {
+  .leaderboard-page {
+    padding-top: 55px;
+    padding-bottom: 65px;
+  }
+
+  .leaderboard-page h1 {
+    font-size: 39px;
+    letter-spacing: -2px;
+  }
+
+  .stats-row {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin: 30px 0 40px;
+  }
+
+  .stat-card {
+    min-height: auto;
+    display: grid;
+    grid-template-columns: 30px 1fr;
+    align-items: center;
+    gap: 5px 12px;
+    padding: 17px;
+  }
+
+  .stat-card svg {
+    grid-row: span 2;
+  }
+
+  .stat-card strong {
+    font-size: 25px;
+  }
+
+  .stat-card span {
+    font-size: 11px;
+  }
+
+  .score-table h3 {
+    padding: 18px;
+  }
+
+  .score-row {
+    grid-template-columns: 35px minmax(0, 1fr) auto;
+    gap: 9px;
+    padding: 16px 13px;
+  }
+
+  .score-row > span:not(.rank) {
+    display: none;
+  }
+
+  .score-row strong {
+    font-size: 12px;
+  }
+
+  .score-row b {
+    font-size: 12px;
+  }
+}
+
+/* REDUCED MOTION */
+
+@media (prefers-reduced-motion: reduce) {
+  .stat-card,
+  .score-row {
+    transition: none;
+  }
+}

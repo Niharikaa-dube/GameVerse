@@ -1,0 +1,41 @@
+
+/* =================================
+   GAMEVERSE APP LAYOUT
+================================= */
+
+.app {
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+  background: #0a0a0a;
+  color: #ffffff;
+}
+
+.app main {
+  width: 100%;
+  min-height: 70vh;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Selection */
+::selection {
+  background: #a78bfa;
+  color: #0a0a0a;
+}
+
+/* Remove default button font mismatch */
+button,
+input {
+  font: inherit;
+}
+
+/* Accessibility */
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid #a78bfa;
+  outline-offset: 4px;
+}
